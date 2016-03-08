@@ -1,6 +1,28 @@
 window.addEventListener('load', function() {
 	//stran nalozena
+	
+	
+	var izvediPrijavo = function(event) {
 		
+		var uporabnik = document.querySelector("#uporabnisko_ime").value;
+		document.querySelector("#uporabnik").innerHTML = uporabnik;
+		document.querySelector(".pokrivalo").style.visibility = "hidden";
+	}
+	
+	var novOpomnik = function(event) {
+		
+		var nazivZadolzitve = document.querySelector("#naziv_opomnika").value;
+		var cas = document.querySelector("#cas_opomnika").value;
+		
+		document.querySelector("#naziv_opomnika").value = '';
+		document.querySelector("#cas_opomnika").value = '';
+	}
+	
+	
+	document.querySelector("#prijavniGumb").addEventListener('click', izvediPrijavo);
+	document.querySelector("#dodajGumb").addEventListener('click', novOpomnik);
+	
+	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
